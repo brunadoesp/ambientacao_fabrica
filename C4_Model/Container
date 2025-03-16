@@ -1,0 +1,24 @@
+@startuml Container
+node "Web Browser (Angular + Material UI)" as Browser {
+    [Interface do usuário]
+    [Consome APIs REST]
+}
+
+node "API Backend (Spring Boot)" as Backend {
+    [Exposição de APIs REST]
+    [Processamento de dados]
+    [Persistência (H2)]
+}
+
+node "Banco de Dados (H2)" as DB {
+    [Armazena inscrições]
+}
+
+node "Serviço de Email (SMTP)" as Email {
+    [Envio de confirmações]
+}
+
+Browser --> Backend
+Backend --> DB
+Backend --> Email
+@enduml
