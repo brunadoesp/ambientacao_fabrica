@@ -6,11 +6,7 @@ actor "Usuário Administrador" as Administrador
 rectangle "SIPROS" {
     Candidato --> (Preencher inscrição)
     (Preencher inscrição) --> (Armazenar dados no H2)
-    (Armazenar dados no H2) --> (Enviar email de confirmação)
     Administrador --> (Visualizar inscrições)
 }
 
-rectangle "Serviço de Email" as Email {
-    (Enviar email de confirmação) --> Email
-}
 @enduml
