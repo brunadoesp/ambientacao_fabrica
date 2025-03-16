@@ -14,11 +14,7 @@ node "Banco de Dados (H2)" as DB {
     [Armazena inscrições]
 }
 
-node "Serviço de Email (SMTP)" as Email {
-    [Envio de confirmações]
-}
 
 Browser --> Backend
 Backend --> DB
-Backend --> Email
 @enduml
